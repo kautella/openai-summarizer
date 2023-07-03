@@ -87,11 +87,12 @@ const Demo = () => {
         </div>
       </div>
       <div className="my-10 max-w-full flex justify-center items-center">
+        {import.meta.env.VITE_RAPID_API_ARTICLE_KEY}
         {isFetching ? (
           <img src={loader} alt="loader" className="w-20 h-20 object-contain" />
         ) : error ? (
           <p className="text-red-500 text-center font-bold font-inter">
-            <span>{error?.data?.error}</span>
+            <span>{error?.data?.message}</span>
           </p>
         ) : (
           article.summary && (
