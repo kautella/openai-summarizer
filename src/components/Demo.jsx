@@ -20,7 +20,6 @@ const Demo = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(import.meta.env);
     const { data } = await getSummary({ articleUrl: article.url });
     if (data?.summary) {
       const newArticle = { ...article, summary: data.summary };
@@ -88,7 +87,6 @@ const Demo = () => {
         </div>
       </div>
       <div className="my-10 max-w-full flex justify-center items-center">
-        {import.meta.env.VITE_RAPID_API_ARTICLE_KEY}
         {isFetching ? (
           <img src={loader} alt="loader" className="w-20 h-20 object-contain" />
         ) : error ? (
